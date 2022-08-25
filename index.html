@@ -1,0 +1,84 @@
+<!DOCTYPE HTML>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title> Challenge ONE Alura - Cripto </title>
+    <link rel="stylesheet" href="E:\Alura\OracleOne\Challenge01\css\reset.css">
+    <link rel="stylesheet" href="E:\Alura\OracleOne\Challenge01\css\styles.css">
+</head>
+
+<body>
+    <div class="bloco">
+        <div class="pesquisa">
+            <header>
+                <div>
+                    <img src="E:\Alura\OracleOne\Challenge01\imgs\Vector.png">
+                </div>
+            </header>
+            <main>
+                <form>
+                    <textarea id="textdescripto" class="input-padrao" placeholder="Digite seu texto"></textarea>
+                    <div id="buttons">
+                        <input type="button" value="Criptografar" class="buttons" id="cripBtn">
+                        <input type="button" value="Descriptografar" class="buttons" id="decrBtn" disabled>
+                    </div>
+                </form>
+            </main>
+        </div>
+        <div class="resultado">
+            <div id="formPnl">
+                <form>
+                    <textarea id="textcripto" class="input-padrao" disabled></textarea>
+                    <div>
+                        <input type="button" value="Copiar" class="buttons" id="copyBtn" disabled>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        const btnCripto = document.getElementById('cripBtn');
+
+        btnCripto.addEventListener('click', criptografa);
+
+        function criptografa() {
+            var textoDecript = document.getElementById('textdescripto').value;
+            var novoTexto = textoDecript.replace("e", "enter").replace("i", "imes").replace("a", "ai").replace("o", "ober").replace("u", "ufat");
+
+            document.getElementById('textcripto').value = novoTexto;
+
+            document.getElementById("cripBtn").disabled = true;
+            document.getElementById("decrBtn").disabled = false;
+            document.getElementById("copyBtn").disabled = false;
+        }
+
+        const btnDecripto = document.getElementById('decrBtn');
+        btnDecripto.addEventListener('click', decriptografa);
+
+        function decriptografa() {
+            var textoCript = document.getElementById('textdescripto').value;
+            var novoTexto = textoCript.replace("enter", "e").replace("imes", "i").replace("ai", "a").replace("ober", "o").replace("ufat", "u");
+
+            document.getElementById('textcripto').value = novoTexto;
+
+            document.getElementById("cripBtn").disabled = false;
+            document.getElementById("decrBtn").disabled = true;
+            document.getElementById("copyBtn").disabled = true;
+        }
+
+        const btnCopy = document.getElementById('copyBtn');
+        btnCopy.addEventListener('click', copia);
+
+        function copia() {
+            var textoCript = document.getElementById('textcripto').value;
+
+            document.getElementById('textdescripto').value = textoCript;
+
+            document.getElementById("cripBtn").disabled = true;
+            document.getElementById("decrBtn").disabled = false;
+            document.getElementById("copyBtn").disabled = true;
+        }
+        
+    </script>
+</body>
