@@ -82,6 +82,57 @@ textarea:focus {
     border-color:  #F3F5FC;
 }
 
+#infoBar {
+    opacity: 0%;
+    position: relative;
+    box-sizing: border-box;
+    width: 900px;
+    padding-left: 107px;
+    padding-right: 80px;
+    display: flex;
+    vertical-align: middle;
+}
+
+#infoBar img {
+    /* Vector */
+
+    left: 0%;
+    right: 0%;
+    top: 0%;
+    bottom: 0%;
+
+}
+
+#infoText {
+    display: inline-block;
+    margin-left: 8px;
+    /* Apenas letras minúsculas e sem acento. */
+
+
+    width: 228px;
+    height: 18px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 150%;
+    /* identical to box height, or 18px */
+
+
+    /* Gray/gray-400 */
+
+    color: #495057;
+
+    opacity: 0.8;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
 #buttons {
     position: relative;
     box-sizing: border-box;

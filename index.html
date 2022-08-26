@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <title> Challenge ONE Alura - Cripto </title>
-    <link rel="stylesheet" href="E:\Alura\OracleOne\Challenge01\css\reset.css">
-    <link rel="stylesheet" href="E:\Alura\OracleOne\Challenge01\css\styles.css">
+    <link rel="stylesheet" href="css\reset.css">
+    <link rel="stylesheet" href="css\styles.css">
 </head>
 
 <body>
@@ -13,12 +13,16 @@
         <div class="pesquisa">
             <header>
                 <div>
-                    <img src="E:\Alura\OracleOne\Challenge01\imgs\Vector.png">
+                    <img src="imgs\Vector.png">
                 </div>
             </header>
             <main>
                 <form>
                     <textarea id="textdescripto" class="input-padrao" placeholder="Digite seu texto"></textarea>
+                    <div id="infoBar">
+                        <img src="imgs\Exclamation.svg">
+                        <p id="infoText">Apenas letras minúsculas e sem acento.</p>
+                    </div>
                     <div id="buttons">
                         <input type="button" value="Criptografar" class="buttons" id="cripBtn">
                         <input type="button" value="Descriptografar" class="buttons" id="decrBtn" disabled>
@@ -38,19 +42,40 @@
         </div>
     </div>
     <script>
+        var regexCheck = '[a-z]';
+
+        function validar(texto) {
+
+            if (!texto.match(regexCheck)) {
+                return false;
+            }
+
+        }
+
         const btnCripto = document.getElementById('cripBtn');
 
         btnCripto.addEventListener('click', criptografa);
 
         function criptografa() {
             var textoDecript = document.getElementById('textdescripto').value;
-            var novoTexto = textoDecript.replace("e", "enter").replace("i", "imes").replace("a", "ai").replace("o", "ober").replace("u", "ufat");
 
-            document.getElementById('textcripto').value = novoTexto;
+            if (validar(textoDecript)) {
+            
+                var novoTexto = textoDecript.replace("e", "enter").replace("i", "imes").replace("a", "ai").replace("o", "ober").replace("u", "ufat");
 
-            document.getElementById("cripBtn").disabled = true;
-            document.getElementById("decrBtn").disabled = false;
-            document.getElementById("copyBtn").disabled = false;
+                document.getElementById('textcripto').value = novoTexto;
+
+                document.getElementById("cripBtn").disabled = true;
+                document.getElementById("decrBtn").disabled = false;
+                document.getElementById("copyBtn").disabled = false;
+            
+            } else {
+
+                document.getElementById('textdescripto').value = '';
+                document.getElementById('infoBar').style.opacity='100%';
+
+            }
+
         }
 
         const btnDecripto = document.getElementById('decrBtn');
