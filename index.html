@@ -6,6 +6,9 @@
     <title> Challenge ONE Alura - Cripto </title>
     <link rel="stylesheet" href="css\reset.css">
     <link rel="stylesheet" href="css\styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -39,15 +42,26 @@
                     </div>
                 </form>
             </div>
+            <div id="formPlaceholder">
+                <img src="imgs\High quality products 1 1.png" id="placeholderImg">
+                <p id="placeholderH1">
+                    Nenhuma mensagem encontrada
+                </p>
+                <p id="placeholderH2">
+                    Digite um texto que você deseja criptografar ou descriptografar.
+                </p>
+            </div>
         </div>
     </div>
     <script>
-        var regexCheck = '[a-z]';
+        var regexCheck = '[a-z]*';
 
-        function validar(texto) {
+        function valido(texto) {
 
-            if (!texto.match(regexCheck)) {
+            if (texto.match(regexCheck)!=texto) {
                 return false;
+            } else {
+                return true;
             }
 
         }
@@ -59,15 +73,16 @@
         function criptografa() {
             var textoDecript = document.getElementById('textdescripto').value;
 
-            if (validar(textoDecript)) {
+            if (valido(textoDecript)) {
             
                 var novoTexto = textoDecript.replace("e", "enter").replace("i", "imes").replace("a", "ai").replace("o", "ober").replace("u", "ufat");
 
                 document.getElementById('textcripto').value = novoTexto;
 
-                document.getElementById("cripBtn").disabled = true;
-                document.getElementById("decrBtn").disabled = false;
+                document.getElementById("cripBtn").disabled = false;
+                document.getElementById("decrBtn").disabled = true;
                 document.getElementById("copyBtn").disabled = false;
+                document.getElementById("formPlaceholder").style = 'z-index : -1';
             
             } else {
 
@@ -97,6 +112,7 @@
 
         function copia() {
             var textoCript = document.getElementById('textcripto').value;
+            document.getElementById('textcripto').value = '';
 
             document.getElementById('textdescripto').value = textoCript;
 
