@@ -12,8 +12,7 @@
 </head>
 
 <body>
-    <div class="bloco">
-        <div class="entrada">
+    <div class="bloco"><div class="entrada">
             <header>
                 <div>
                     <img src="imgs\Vector.png">
@@ -25,33 +24,29 @@
                     <div id="infoBar">
                         <img src="imgs\Exclamation.svg">
                         <p id="infoText">Apenas letras minúsculas e sem acento.</p>
-                    </div>
-                    <div id="buttonsInput">
+                    </div><div id="buttonsInput">
                         <input type="button" value="Criptografar" class="buttons" id="cripBtn">
                         <input type="button" value="Descriptografar" class="buttons" id="decrBtn" disabled>
                     </div>
                 </form>
             </main>
-        </div>
-        <div class="saida">
+        </div><div class="saida">
             <div id="panelOutput">
                 <form>
-                    <textarea id="textOutput" class="input-padrao" disabled></textarea>
-                    <div>
+                    <textarea id="textOutput" class="input-padrao" disabled></textarea><div id="buttonsOutput">
                         <input type="button" value="Copiar" class="buttons" id="copyBtn" disabled>
                     </div>
                 </form>
-            </div>
-            <div id="placeholderOutput">
-                <img src="imgs\High quality products 1 1.png" id="placeholderImg">
-                <p id="placeholderH1">
-                    Nenhuma mensagem encontrada
-                </p>
-                <p id="placeholderH2">
-                    Digite um texto que você deseja criptografar ou descriptografar.
-                </p>
-            </div>
-        </div>
+            </div><div id="placeholderOutput">
+                <div id="placeholderContent">
+                    <img src="imgs\High quality products 1 1.png" id="placeholderImg">
+                    <p id="placeholderH1">
+                        Nenhuma mensagem encontrada
+                    </p>
+                    <p id="placeholderH2">
+                        Digite um texto que você deseja criptografar ou descriptografar.
+                    </p>
+                </div></div></div>
     </div>
     <script>
         var regexCheck = '[a-z]*';

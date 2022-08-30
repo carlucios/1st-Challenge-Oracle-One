@@ -8,6 +8,7 @@ div {
 }
 
 .bloco {
+    display:flex;
     position: absolute;
     left: 0; 
     right: 0; 
@@ -16,17 +17,19 @@ div {
     width: 1440px;
     height: 1024px;
     box-sizing: border-box;
-    padding: 30px 60px 40px 40px;
+    padding: 40px 35px 40px 45px;
 }
 
 .entrada {
     position: relative;
-    width: 940px;
+    width: 70.5%;
+    height: 100%;
+    padding: 0;
 }
 
 header {
     position: relative;
-    width: 900px;
+    width: 100%;
 }
 
 header div {
@@ -37,6 +40,7 @@ header div {
 header img {
     width: 31px;
     height: 48px;
+    padding-left: 17px;
 }
 
 input:focus { 
@@ -52,9 +56,9 @@ textarea:focus {
     resize: none;
     background-color: #F3F5FC;
     position: relative;
-    width: 900px;
+    width: 100%;
     height: 746px;
-    padding-left: 95px;
+    padding-left: 200px;
     padding-top: 115px;
     padding-right: 76px;
     border-color:  #F3F5FC;
@@ -82,8 +86,8 @@ textarea:focus {
     opacity: 0%;
     position: relative;
     box-sizing: border-box;
-    width: 900px;
-    padding-left: 107px;
+    width: 100%;
+    padding-left: 200px;
     padding-right: 80px;
     display: flex;
     vertical-align: middle;
@@ -100,7 +104,6 @@ textarea:focus {
 }
 
 #infoText {
-    display: inline-block;
     margin-left: 8px;
     /* Apenas letras minúsculas e sem acento. */
 
@@ -132,8 +135,8 @@ textarea:focus {
 #buttonsInput {
     position: relative;
     box-sizing: border-box;
-    width: 900px;
-    padding-left: 95px;
+    width: 100%;
+    padding-left: 194px;
     padding-right: 80px;
     align-content: space-between;
 }
@@ -161,41 +164,44 @@ textarea:focus {
     background-color: #0A3871;
     color: #FFFFFF;
     cursor:pointer;
+    margin-left: 0;
 }
 
 #cripBtn[disabled] {
     cursor: default;
+    margin-left: 0;
 }
 
 #decrBtn {
     background-color: #F3F5FC;
     color: #0A3871;
     cursor:pointer;
+    margin-right: 0;
 }
 
 #decrBtn[disabled] {
     background-color: #D8DFE8;
     cursor: default;
+    margin-right: 0;
 }
 
 .saida {
     position: relative;
-    display: inline-block;
-    width: 480px;
-    height: 984px;
+    width: 29.5%;
+    max-width: 400px;
+    right: 0;
+    height: 100%;
     border-radius: 32px;
-    transform: translate(900px, -957px);
-    padding: 40px;
-    margin-left: 20px;
+    padding: 0px;
     box-sizing: border-box;
 }
 
 #panelOutput {
-    position: relative;
+    position: absolute;
+    position: 0;
     background-color: #ffffff;
-    display: inline-block;
-    width: 400px;
-    height: 944px;
+    width: 100%;
+    height: 100%;
     border-radius: 32px;
     padding: 0px;
     box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
@@ -203,21 +209,22 @@ textarea:focus {
 }
 
 #placeholderOutput {
-    position: relative;
+    position: absolute;
+    position: 0;
     background-color: #ffffff;
-    width: 96%;
-    height: 98%;
-    margin: 2%;
-    padding: 0;
-    transform: translate(0, -925px);
-    z-index: 1;
+    width: 100%;
+    height: 100%;
+    border-radius: 32px;
+    padding: 0px;
+    box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
     box-sizing: border-box;
+    z-index: 1;
 }
 
 #textOutput[disabled] {
     resize: none;
     position: relative;
-    width: 400px;
+    width: 100%;
     height: 825px;
     padding: 32px;
     border-radius: 32px;
@@ -230,11 +237,18 @@ textarea:focus {
     font-family: 'Inter';
 }
 
+#buttonsOutput {
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    margin: auto;
+    padding-top: 6px;
+}
+
 #copyBtn {
     width: 336px;
     background-color: #FFFFFF;
     color: #0A3871;
-    margin-bottom: 32px;
     margin-left: 32px;
     margin-right: 32px;
     cursor:pointer;
@@ -244,11 +258,23 @@ textarea:focus {
     cursor: default;
 }
 
+#placeholderContent {
+    position: absolute;
+    top: 25%;
+    bottom: 25%;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
 #placeholderImg {
-    margin: 220px 24px 16px 24px;
+    display:block;
+    margin: auto;
+
 }
 
 #placeholderH1 {
+    display:block;
     margin: 16px auto;
     width: 336px;
     height: 58px;
@@ -276,6 +302,7 @@ textarea:focus {
 }
 
 #placeholderH2 {
+    display:block;
     padding: 16px auto;
     margin: auto;
     width: 336px;
