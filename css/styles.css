@@ -329,3 +329,12 @@ textarea:focus {
     align-self: stretch;
     flex-grow: 0;
 }
+
+footer {
+    position: fixed;
+    color: #0A3871;
+    left: -10px;
+    bottom: 10px;
+    width: 100%;
+    text-align: right;
+}
