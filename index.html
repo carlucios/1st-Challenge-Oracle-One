@@ -13,7 +13,7 @@
 
 <body>
     <div class="bloco">
-        <div class="pesquisa">
+        <div class="entrada">
             <header>
                 <div>
                     <img src="imgs\Vector.png">
@@ -21,28 +21,28 @@
             </header>
             <main>
                 <form>
-                    <textarea id="textdescripto" class="input-padrao" placeholder="Digite seu texto"></textarea>
+                    <textarea id="textInput" class="input-padrao" placeholder="Digite seu texto"></textarea>
                     <div id="infoBar">
                         <img src="imgs\Exclamation.svg">
                         <p id="infoText">Apenas letras minúsculas e sem acento.</p>
                     </div>
-                    <div id="buttons">
+                    <div id="buttonsInput">
                         <input type="button" value="Criptografar" class="buttons" id="cripBtn">
                         <input type="button" value="Descriptografar" class="buttons" id="decrBtn" disabled>
                     </div>
                 </form>
             </main>
         </div>
-        <div class="resultado">
-            <div id="formPnl">
+        <div class="saida">
+            <div id="panelOutput">
                 <form>
-                    <textarea id="textcripto" class="input-padrao" disabled></textarea>
+                    <textarea id="textOutput" class="input-padrao" disabled></textarea>
                     <div>
                         <input type="button" value="Copiar" class="buttons" id="copyBtn" disabled>
                     </div>
                 </form>
             </div>
-            <div id="formPlaceholder">
+            <div id="placeholderOutput">
                 <img src="imgs\High quality products 1 1.png" id="placeholderImg">
                 <p id="placeholderH1">
                     Nenhuma mensagem encontrada
@@ -71,22 +71,22 @@
         btnCripto.addEventListener('click', criptografa);
 
         function criptografa() {
-            var textoDecript = document.getElementById('textdescripto').value;
+            var textoDecript = document.getElementById('textInput').value;
 
             if (valido(textoDecript)) {
             
                 var novoTexto = textoDecript.replace("e", "enter").replace("i", "imes").replace("a", "ai").replace("o", "ober").replace("u", "ufat");
 
-                document.getElementById('textcripto').value = novoTexto;
+                document.getElementById('textOutput').value = novoTexto;
 
                 document.getElementById("cripBtn").disabled = false;
                 document.getElementById("decrBtn").disabled = true;
                 document.getElementById("copyBtn").disabled = false;
-                document.getElementById("formPlaceholder").style = 'z-index : -1';
+                document.getElementById("placeholderOutput").style = 'z-index : -1';
             
             } else {
 
-                document.getElementById('textdescripto').value = '';
+                document.getElementById('textInput').value = '';
                 document.getElementById('infoBar').style.opacity='100%';
 
             }
@@ -97,10 +97,10 @@
         btnDecripto.addEventListener('click', decriptografa);
 
         function decriptografa() {
-            var textoCript = document.getElementById('textdescripto').value;
+            var textoCript = document.getElementById('textInput').value;
             var novoTexto = textoCript.replace("enter", "e").replace("imes", "i").replace("ai", "a").replace("ober", "o").replace("ufat", "u");
 
-            document.getElementById('textcripto').value = novoTexto;
+            document.getElementById('textOutput').value = novoTexto;
 
             document.getElementById("cripBtn").disabled = false;
             document.getElementById("decrBtn").disabled = true;
@@ -111,10 +111,10 @@
         btnCopy.addEventListener('click', copia);
 
         function copia() {
-            var textoCript = document.getElementById('textcripto').value;
-            document.getElementById('textcripto').value = '';
+            var textoCript = document.getElementById('textOutput').value;
+            document.getElementById('textOutput').value = '';
 
-            document.getElementById('textdescripto').value = textoCript;
+            document.getElementById('textInput').value = textoCript;
 
             document.getElementById("cripBtn").disabled = true;
             document.getElementById("decrBtn").disabled = false;

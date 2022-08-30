@@ -19,7 +19,7 @@ div {
     padding: 30px 60px 40px 40px;
 }
 
-.pesquisa {
+.entrada {
     position: relative;
     width: 940px;
 }
@@ -48,7 +48,7 @@ textarea:focus {
     border-color: #F3F5FC;
 }
 
-#textdescripto {
+#textInput {
     resize: none;
     background-color: #F3F5FC;
     position: relative;
@@ -64,7 +64,7 @@ textarea:focus {
     font-family: 'Inter';
 }
 
-#textdescripto::placeholder {
+#textInput::placeholder {
     color: #0A3871;
     font-family: 'Inter';
     font-style: normal;
@@ -129,7 +129,7 @@ textarea:focus {
     flex-grow: 0;
 }
 
-#buttons {
+#buttonsInput {
     position: relative;
     box-sizing: border-box;
     width: 900px;
@@ -178,7 +178,7 @@ textarea:focus {
     cursor: default;
 }
 
-.resultado {
+.saida {
     position: relative;
     display: inline-block;
     width: 480px;
@@ -190,7 +190,7 @@ textarea:focus {
     box-sizing: border-box;
 }
 
-#formPnl {
+#panelOutput {
     position: relative;
     background-color: #ffffff;
     display: inline-block;
@@ -202,7 +202,7 @@ textarea:focus {
     box-sizing: border-box;
 }
 
-#formPlaceholder {
+#placeholderOutput {
     position: relative;
     background-color: #ffffff;
     width: 96%;
@@ -214,7 +214,7 @@ textarea:focus {
     box-sizing: border-box;
 }
 
-#textcripto[disabled] {
+#textOutput[disabled] {
     resize: none;
     position: relative;
     width: 400px;
